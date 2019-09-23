@@ -1,0 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+    background-image: url("https://img00.deviantart.net/9e82/i/2012/098/4/2/dumbledore__s_army_wallpaper_by_theladyavatar-d4vhdg3.jpg");
+    background-color: #cccccc;
+ }
+
+#index{
+  text-align: center;
+  height: 70px;
+}
+
+#wizard_show{
+  background-color: #7b130f;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  bottom: 50px;
+}
+
+#show_img{
+  top: 10%;
+}
+
+#show_pic{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wizard_name{
+  text-align: center;
+}
