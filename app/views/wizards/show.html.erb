@@ -1,13 +1,9 @@
-<h2 class="wizard_name"><%= @wizard.name %>: </h2>
+<h2 class="wizard_name"><%= @wizard.name %> </h2>
 <div id="show_img"><%= image_tag(@wizard.image, id: "show_pic", size: "600x400")%></div><br /><br />
-<!-- <h3>Spells:</h3> <br><br> -->
-<% @wizard.spells.each do |spell| %>
+<%= @wizard.spells.each do |spell| %>
 <div id="wizard_show">
-  <p class="wizard_show">Spell Name: <%= spell.name %></p>
-  <p class="wizard_show">Description: <%= spell.description %></p>
+  <p class="wizard_show">Spell Name: </p>
+  <p class="wizard_show">Description: </p>
 </div>
 
 <% end %>
-
-<%= link_to "Add Spell", new_wizard_favorite_spell_path(@wizard) %>
-<%= link_to "Delete Wizard", @wizard, method: :delete %>

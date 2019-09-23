@@ -1,7 +1,6 @@
 <h2>New Spell for <%= @wizard.name %></h2>:
 
 <%= form_for @favorite_spell do |f| %>
-  <%= f.hidden_field :wizard_id, :value => @wizard.id %>
-  <%= f.collection_select :spell_id, Spell.all, :id, :name %> <br>
-  <%= f.submit "Add Spell to Repertoire"%>
+<%= f.collection_select :spell_id, @spells, :name, :id %> <br>
+<%= f.submit "Add Spell to Repertoire"%>
 <% end %>

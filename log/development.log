@@ -7845,3 +7845,279 @@ Processing by WizardsController#show as HTML
 Completed 200 OK in 450ms (Views: 431.2ms | ActiveRecord: 2.8ms)
 
 
+Started GET "/wizards/22" for ::1 at 2019-09-23 15:47:00 -0400
+Processing by WizardsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mWizard Load (0.3ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/wizards_controller.rb:28
+  Rendering wizards/show.html.erb within layouts/application
+  [1m[36mSpell Load (0.2ms)[0m  [1m[34mSELECT "spells".* FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ?[0m  [["wizard_id", 22]]
+  ↳ app/views/wizards/show.html.erb:4
+  Rendered wizards/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-23 15:47:02 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  Rendered wizards/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <ul>
+    2:   <% @wizards.each do |wizard| %>
+    3:   <%= image_tag(wizard.image, size: "350x300")%>
+    4: 
+    5:   <% end %>
+  
+app/views/wizards/index.html.erb:2:in `_app_views_wizards_index_html_erb___2283449842804742872_70119509002840'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mFavoriteSpell Load (0.1ms)[0m  [1m[34mSELECT "favorite_spells".* FROM "favorite_spells"[0m
+  ↳ db/seeds.rb:1
+  [1m[36mSpell Load (0.1ms)[0m  [1m[34mSELECT "spells".* FROM "spells"[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpell Destroy (0.4ms)[0m  [1m[31mDELETE FROM "spells" WHERE "spells"."id" = ?[0m  [["id", 33]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpell Destroy (0.2ms)[0m  [1m[31mDELETE FROM "spells" WHERE "spells"."id" = ?[0m  [["id", 34]]
+  ↳ db/seeds.rb:2
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpell Destroy (0.3ms)[0m  [1m[31mDELETE FROM "spells" WHERE "spells"."id" = ?[0m  [["id", 35]]
+  ↳ db/seeds.rb:2
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpell Destroy (0.3ms)[0m  [1m[31mDELETE FROM "spells" WHERE "spells"."id" = ?[0m  [["id", 36]]
+  ↳ db/seeds.rb:2
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpell Destroy (0.3ms)[0m  [1m[31mDELETE FROM "spells" WHERE "spells"."id" = ?[0m  [["id", 37]]
+  ↳ db/seeds.rb:2
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpell Destroy (0.3ms)[0m  [1m[31mDELETE FROM "spells" WHERE "spells"."id" = ?[0m  [["id", 38]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpell Destroy (0.3ms)[0m  [1m[31mDELETE FROM "spells" WHERE "spells"."id" = ?[0m  [["id", 39]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpell Destroy (0.2ms)[0m  [1m[31mDELETE FROM "spells" WHERE "spells"."id" = ?[0m  [["id", 40]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mWizard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wizards" WHERE "wizards"."id" = ?[0m  [["id", 22]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mWizard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wizards" WHERE "wizards"."id" = ?[0m  [["id", 23]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mWizard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wizards" WHERE "wizards"."id" = ?[0m  [["id", 24]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mWizard Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wizards" WHERE "wizards"."id" = ?[0m  [["id", 25]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mWizard Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wizards" WHERE "wizards"."id" = ?[0m  [["id", 26]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mWizard Create (0.3ms)[0m  [1m[32mINSERT INTO "wizards" ("name", "house", "age", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["house", "Gryffindor"], ["age", 17], ["created_at", "2019-09-23 19:48:48.000485"], ["updated_at", "2019-09-23 19:48:48.000485"], ["image", "http://www.univers-series.com/wp-content/uploads/2016/02/harrypotter.jpeg"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mWizard Create (0.3ms)[0m  [1m[32mINSERT INTO "wizards" ("name", "house", "age", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hermione Granger"], ["house", "Gryffindor"], ["age", 17], ["created_at", "2019-09-23 19:48:48.003965"], ["updated_at", "2019-09-23 19:48:48.003965"], ["image", "https://wallpapersite.com/images/pages/pic_w/8936.jpg"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[36mWizard Create (0.5ms)[0m  [1m[32mINSERT INTO "wizards" ("name", "house", "age", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ron Weasley"], ["house", "Gryffindor"], ["age", 17], ["created_at", "2019-09-23 19:48:48.007153"], ["updated_at", "2019-09-23 19:48:48.007153"], ["image", "http://images4.fanpop.com/image/photos/23000000/DH-Part-II-ronald-weasley-23081519-500-296.jpg"]]
+  ↳ db/seeds.rb:7
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mWizard Create (0.3ms)[0m  [1m[32mINSERT INTO "wizards" ("name", "house", "age", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Draco Malfoy"], ["house", "Slytherin"], ["age", 17], ["created_at", "2019-09-23 19:48:48.009844"], ["updated_at", "2019-09-23 19:48:48.009844"], ["image", "https://cdn.movieweb.com/img.news.tops/NEh934QRmEyekk_2_b/Tom-Felton-Draco-Malfoy-No-More-Harry-Potter.jpg"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mWizard Create (0.3ms)[0m  [1m[32mINSERT INTO "wizards" ("name", "house", "age", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Severus Snape"], ["house", "Slytherin"], ["age", 38], ["created_at", "2019-09-23 19:48:48.013045"], ["updated_at", "2019-09-23 19:48:48.013045"], ["image", "https://vignette.wikia.nocookie.net/villains/images/1/12/Snape-will-never-die-severus-snape-22970808-1600-2118.jpg/revision/latest?cb=20170304205903"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSpell Create (0.4ms)[0m  [1m[32mINSERT INTO "spells" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Expelliarmus"], ["description", "Basically the only spell Harry ever uses when he's in a duel"], ["created_at", "2019-09-23 19:48:48.015787"], ["updated_at", "2019-09-23 19:48:48.015787"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSpell Create (0.3ms)[0m  [1m[32mINSERT INTO "spells" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Expecto Patronum"], ["description", "Gets rid of pesky Dementors by summoning a badass Patronus to chase them away"], ["created_at", "2019-09-23 19:48:48.019115"], ["updated_at", "2019-09-23 19:48:48.019115"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSpell Create (0.4ms)[0m  [1m[32mINSERT INTO "spells" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Alohomora"], ["description", "That one Hermione keeps using to unlock doors when they go sneaking around in the first book"], ["created_at", "2019-09-23 19:48:48.024184"], ["updated_at", "2019-09-23 19:48:48.024184"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mSpell Create (0.5ms)[0m  [1m[32mINSERT INTO "spells" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Wingardium Leviosa"], ["description", "Makes things levitate. Sounds fun."], ["created_at", "2019-09-23 19:48:48.055868"], ["updated_at", "2019-09-23 19:48:48.055868"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mSpell Create (0.5ms)[0m  [1m[32mINSERT INTO "spells" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Accio"], ["description", "The perfect charm for lazy people who can't be bothered to get up and fetch the TV remote"], ["created_at", "2019-09-23 19:48:48.058651"], ["updated_at", "2019-09-23 19:48:48.058651"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mSpell Create (0.3ms)[0m  [1m[32mINSERT INTO "spells" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Obliviate"], ["description", "The charm Gilderoy Lockhart uses to accidentally wipe his own memory, the big buffoon"], ["created_at", "2019-09-23 19:48:48.062481"], ["updated_at", "2019-09-23 19:48:48.062481"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSpell Create (0.4ms)[0m  [1m[32mINSERT INTO "spells" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sectumsempra"], ["description", "A mouthful of a curse invented by troubled teen Severus Snape"], ["created_at", "2019-09-23 19:48:48.064490"], ["updated_at", "2019-09-23 19:48:48.064490"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mSpell Create (0.3ms)[0m  [1m[32mINSERT INTO "spells" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Crucio"], ["description", "Basically torture in a kids book"], ["created_at", "2019-09-23 19:48:48.066777"], ["updated_at", "2019-09-23 19:48:48.066777"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mSpell Load (0.1ms)[0m  [1m[34mSELECT  "spells".* FROM "spells" WHERE "spells"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+Started GET "/favorite_spells/new" for ::1 at 2019-09-23 15:57:16 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by FavoriteSpellsController#new as HTML
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Wizard without an ID):
+  
+app/controllers/favorite_spells_controller.rb:4:in `new'
+Started GET "/rails/info/routes" for ::1 at 2019-09-23 15:58:38 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [26 times] (12.6ms)
+  Rendered /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.5ms)
+  Rendered /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2019-09-23 16:00:26 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (1.4ms)
+  Rendered /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/tashawn.williams/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-23 16:00:32 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  Rendered wizards/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <ul>
+    2:   <% @wizards.each do |wizard| %>
+    3:   <%= image_tag(wizard.image, size: "350x300")%>
+    4:   <% end %>
+    5: </ul>
+  
+app/views/wizards/index.html.erb:2:in `_app_views_wizards_index_html_erb___2283449842804742872_70119496551660'
+Started GET "/wizards/1" for ::1 at 2019-09-23 16:00:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/wizards/1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

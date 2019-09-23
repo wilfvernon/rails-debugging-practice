@@ -4,6 +4,7 @@ class CreateWizards < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :house
       t.integer :age
+      t.string :image
       t.timestamps
     end
   end
