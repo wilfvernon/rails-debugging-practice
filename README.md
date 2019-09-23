@@ -1,6 +1,6 @@
 # Rails Debugging Practice
 
-## A colleague and I were working on a Harry Potter app for fun. It's currently terrible and needs some work. Your goal is to get this application to full functionality. Read and understand the source code, read the below deliverables, and make the necessary changes/additions, to get the app to work
+_A colleague and I were working on a Harry Potter app for fun. It's currently terrible and needs some work. Your goal is to get this application to full functionality. Read and understand the source code, read the below deliverables, and make the necessary changes/additions, to get the app to work_
 
 ## Deliverables
 
