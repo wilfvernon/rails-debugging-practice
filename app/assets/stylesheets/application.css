@@ -50,6 +50,13 @@
     margin-right: auto;
 }
 
+.wizard_pics{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+
 .wizard_name{
   text-align: center;
 }

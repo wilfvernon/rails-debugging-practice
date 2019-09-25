@@ -12836,3 +12836,422 @@ Processing by FavoriteSpellsController#new as HTML
 Completed 200 OK in 31ms (Views: 18.4ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for ::1 at 2019-09-25 09:33:15 -0400
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (4.8ms)
+Completed 200 OK in 32ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 09:33:18 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (2.6ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 442ms (Views: 421.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/wizards/65" for ::1 at 2019-09-25 09:33:24 -0400
+Processing by WizardsController#show as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mWizard Load (0.5ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/wizards_controller.rb:8
+  Rendering wizards/show.html.erb within layouts/application
+  [1m[36mSpell Load (2.9ms)[0m  [1m[34mSELECT "spells".* FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ?[0m  [["wizard_id", 65]]
+  ↳ app/views/wizards/show.html.erb:12
+  Rendered wizards/show.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 106ms (Views: 86.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/wizards/65/new_favorite_spell" for ::1 at 2019-09-25 09:33:26 -0400
+Processing by FavoriteSpellsController#new as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:3
+  [1m[36mSpell Load (0.2ms)[0m  [1m[34mSELECT "spells".* FROM "spells"[0m
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 94], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 95], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 96], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 65], ["id", 97], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  Rendering favorite_spells/new.html.erb within layouts/application
+  Rendered favorite_spells/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 59ms (Views: 32.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 09:34:07 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.3ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 40ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wizards/61" for ::1 at 2019-09-25 09:34:10 -0400
+Processing by WizardsController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/wizards_controller.rb:8
+  Rendering wizards/show.html.erb within layouts/application
+  [1m[36mSpell Load (0.2ms)[0m  [1m[34mSELECT "spells".* FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ?[0m  [["wizard_id", 61]]
+  ↳ app/views/wizards/show.html.erb:12
+  Rendered wizards/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 30ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wizards/61/new_favorite_spell" for ::1 at 2019-09-25 09:34:11 -0400
+Processing by FavoriteSpellsController#new as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:3
+  [1m[36mSpell Load (0.1ms)[0m  [1m[34mSELECT "spells".* FROM "spells"[0m
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 94], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 95], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 96], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 97], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  Rendering favorite_spells/new.html.erb within layouts/application
+  Rendered favorite_spells/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 17.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/wizards/61/new_favorite_spell" for ::1 at 2019-09-25 09:34:24 -0400
+Processing by FavoriteSpellsController#new as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:3
+  [1m[36mSpell Load (0.2ms)[0m  [1m[34mSELECT "spells".* FROM "spells"[0m
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 94], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 95], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 96], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 61], ["id", 97], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  Rendering favorite_spells/new.html.erb within layouts/application
+  Rendered favorite_spells/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 33ms (Views: 21.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 09:34:33 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wizards/64" for ::1 at 2019-09-25 09:34:36 -0400
+Processing by WizardsController#show as HTML
+  Parameters: {"id"=>"64"}
+  [1m[36mWizard Load (0.7ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/wizards_controller.rb:8
+  Rendering wizards/show.html.erb within layouts/application
+  [1m[36mSpell Load (0.1ms)[0m  [1m[34mSELECT "spells".* FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ?[0m  [["wizard_id", 64]]
+  ↳ app/views/wizards/show.html.erb:12
+  Rendered wizards/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wizards/64/new_favorite_spell" for ::1 at 2019-09-25 09:34:38 -0400
+Processing by FavoriteSpellsController#new as HTML
+  Parameters: {"id"=>"64"}
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:3
+  [1m[36mSpell Load (0.1ms)[0m  [1m[34mSELECT "spells".* FROM "spells"[0m
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 94], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 95], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 96], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 97], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  Rendering favorite_spells/new.html.erb within layouts/application
+  Rendered favorite_spells/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 18.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/favorite_spells" for ::1 at 2019-09-25 09:34:42 -0400
+Processing by FavoriteSpellsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ceWIART5yKPd2JCTbtps5bsa3HkZOlWNtzyA2tzu/gGiA7avb9S7lylmQ4+i+MxWei0ffp9WUIFNCX7RVDlAfA==", "favorite_spell"=>{"spell_id"=>"91", "wizard_id"=>"64"}, "commit"=>"Add Spell to Repertoire"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorite_spells_controller.rb:10
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:10
+  [1m[36mSpell Load (0.1ms)[0m  [1m[34mSELECT  "spells".* FROM "spells" WHERE "spells"."id" = ? LIMIT ?[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:10
+  [1m[36mFavoriteSpell Create (2.7ms)[0m  [1m[32mINSERT INTO "favorite_spells" ("wizard_id", "spell_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["wizard_id", 64], ["spell_id", 91], ["created_at", "2019-09-25 13:34:42.569223"], ["updated_at", "2019-09-25 13:34:42.569223"]]
+  ↳ app/controllers/favorite_spells_controller.rb:10
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorite_spells_controller.rb:10
+Redirected to http://localhost:3000/wizards/64
+Completed 302 Found in 26ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/wizards/64" for ::1 at 2019-09-25 09:34:42 -0400
+Processing by WizardsController#show as HTML
+  Parameters: {"id"=>"64"}
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/wizards_controller.rb:8
+  Rendering wizards/show.html.erb within layouts/application
+  [1m[36mSpell Load (0.1ms)[0m  [1m[34mSELECT "spells".* FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ?[0m  [["wizard_id", 64]]
+  ↳ app/views/wizards/show.html.erb:12
+  Rendered wizards/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wizards/64/new_favorite_spell" for ::1 at 2019-09-25 09:34:51 -0400
+Processing by FavoriteSpellsController#new as HTML
+  Parameters: {"id"=>"64"}
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:3
+  [1m[36mSpell Load (0.2ms)[0m  [1m[34mSELECT "spells".* FROM "spells"[0m
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 94], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 95], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 96], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  [1m[36mSpell Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ? AND "spells"."id" = ? LIMIT ?[0m  [["wizard_id", 64], ["id", 97], ["LIMIT", 1]]
+  ↳ app/controllers/favorite_spells_controller.rb:5
+  Rendering favorite_spells/new.html.erb within layouts/application
+  Rendered favorite_spells/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 16.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 09:36:58 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wizards/new" for ::1 at 2019-09-25 09:37:00 -0400
+Processing by WizardsController#new as HTML
+  Rendering wizards/new.html.erb within layouts/application
+  Rendered wizards/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/wizards/65" for ::1 at 2019-09-25 09:55:16 -0400
+Processing by WizardsController#show as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/wizards_controller.rb:8
+  Rendering wizards/show.html.erb within layouts/application
+  [1m[36mSpell Load (0.2ms)[0m  [1m[34mSELECT "spells".* FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ?[0m  [["wizard_id", 65]]
+  ↳ app/views/wizards/show.html.erb:12
+  Rendered wizards/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:40:07 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 67ms (Views: 63.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wizards/61" for ::1 at 2019-09-25 10:40:10 -0400
+Processing by WizardsController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT  "wizards".* FROM "wizards" WHERE "wizards"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/wizards_controller.rb:8
+  Rendering wizards/show.html.erb within layouts/application
+  [1m[36mSpell Load (0.2ms)[0m  [1m[34mSELECT "spells".* FROM "spells" INNER JOIN "favorite_spells" ON "spells"."id" = "favorite_spells"."spell_id" WHERE "favorite_spells"."wizard_id" = ?[0m  [["wizard_id", 61]]
+  ↳ app/views/wizards/show.html.erb:12
+  Rendered wizards/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:43:08 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:43:16 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:43:19 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:43:52 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:44:37 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:45:19 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:45:45 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.2ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:45:55 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wizards" for ::1 at 2019-09-25 10:46:19 -0400
+Processing by WizardsController#index as HTML
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wizards/new" for ::1 at 2019-09-25 10:46:38 -0400
+Processing by WizardsController#new as HTML
+  Rendering wizards/new.html.erb within layouts/application
+  Rendered wizards/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/wizards" for ::1 at 2019-09-25 10:47:28 -0400
+Processing by WizardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckB3tE6mN41BLxmqAcZnXtMkyQCYN/+CQbIV5N0ItEKhpkkaNYtEubWRyrbN5MftEhMKBx5b+o67h+vvVd8KPw==", "wizard"=>{"name"=>"Gafrompt Chass", "house"=>"Hufflepuff", "age"=>"55", "image"=>"https://scontent-frt3-1.cdninstagram.com/v/t51.2885-15/e35/s320x320/70039357_2447456188654471_6088048089376345544_n.jpg?_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_cat=107&oh=43bb5ed01765e1639dc77a2643bddb6b&oe=5E0D2ACD&ig_cache_key=MjEyNDg5MTQxMjI3NzU1MjQwOA%3D%3D.2"}, "commit"=>"Save Wizard"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/wizards_controller.rb:18
+  [1m[36mWizard Create (3.0ms)[0m  [1m[32mINSERT INTO "wizards" ("name", "house", "age", "created_at", "updated_at", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gafrompt Chass"], ["house", "Hufflepuff"], ["age", 55], ["created_at", "2019-09-25 14:47:28.139032"], ["updated_at", "2019-09-25 14:47:28.139032"], ["image", "https://scontent-frt3-1.cdninstagram.com/v/t51.2885-15/e35/s320x320/70039357_2447456188654471_6088048089376345544_n.jpg?_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_cat=107&oh=43bb5ed01765e1639dc77a2643bddb6b&oe=5E0D2ACD&ig_cache_key=MjEyNDg5MTQxMjI3NzU1MjQwOA%3D%3D.2"]]
+  ↳ app/controllers/wizards_controller.rb:18
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/wizards_controller.rb:18
+Redirected to http://localhost:3000/wizards.66
+Completed 302 Found in 13ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/wizards.66" for ::1 at 2019-09-25 10:47:28 -0400
+Processing by WizardsController#index as 
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 24.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wizards.66" for ::1 at 2019-09-25 10:48:12 -0400
+Processing by WizardsController#index as 
+  Rendering wizards/index.html.erb within layouts/application
+  [1m[36mWizard Load (0.1ms)[0m  [1m[34mSELECT "wizards".* FROM "wizards"[0m
+  ↳ app/views/wizards/index.html.erb:6
+  Rendered wizards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.1ms)
+
+
