@@ -1,0 +1,11 @@
+<h1 class="wizard_name">Book of Spells</h1>
+<div id="show_img"><%= image_tag("https://i.gifer.com/Mhig.gif", id: "show_pic", size: "600x285")%></div><br>
+<br>
+<center>
+<%= button_to "Add a Spell to the Book", new_spell_path, method: :get %>
+<ul>
+  <% @spells.sort.each do |spell| %>
+  <h2><%= link_to "#{spell.name}", spell_path(spell) %></h2>
+  <% end %>
+</ul>
+</center>

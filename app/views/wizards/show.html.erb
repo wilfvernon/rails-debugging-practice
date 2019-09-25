@@ -1,9 +1,18 @@
-<h2 class="wizard_name"><%= @wizard.name %> </h2>
-<div id="show_img"><%= image_tag(@wizard.image, id: "show_pic", size: "600x400")%></div><br /><br />
-<%= @wizard.spells.each do |spell| %>
-<div id="wizard_show">
-  <p class="wizard_show">Spell Name: </p>
-  <p class="wizard_show">Description: </p>
-</div>
+<h2 class="wizard_name"> <%= @wizard.name %> </h2>
+<div id="show_img"><%= image_tag(@wizard.image, id: "show_pic", size: "600x400")%></div><br>
 
+<center>
+<div> <%= button_to "Edit Wizard", edit_wizard_path(@wizard), method: :get %> 
+<%= button_to "Delete Wizard", wizard_path(@wizard), method: :delete %>
+<%= button_to "Add Favorite Spell", new_favorite_spell_path(@wizard), method: :get%> </div>
+</center>
+
+<h3 id="wizard_show">Spells</h3>
+
+<% @wizard.spells.each do |spell| %>
+<div id="wizard_show">
+  <p class="wizard_show"><%= spell.name%></p>
+  <p class="wizard_show"><%= spell.description %></p>
+</div>
 <% end %>
+

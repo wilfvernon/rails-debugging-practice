@@ -1,0 +1,10 @@
+<h1 class="wizard_name"> Put on the Sorting Hat! </h1>
+<div id="show_img"><%= image_tag("https://thumbs.gfycat.com/RectangularBabyishCoelacanth-size_restricted.gif", id: "show_pic", size: "500x288")%></div><br>
+
+<center><%= form_for :wizard, url: wizards_path do |f| %>
+    <%= label_tag 'name'%><%=f.text_field :name %><br>
+    <%= label_tag 'house'%><%=f.select :house, Wizard.houses.map {|house| house}%><br>
+    <%= label_tag 'age'%><%=f.number_field :age %><br>
+    <%= label_tag 'image url'%><%=f.text_field :image %><br>
+    <%= f.submit %>
+<% end %></center>

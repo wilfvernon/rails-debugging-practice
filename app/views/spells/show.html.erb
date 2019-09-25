@@ -1,0 +1,10 @@
+<h1 class="wizard_name"><%= @spell.name %></h1><br>
+<center>
+<p id="wizard_show"><%= @spell.description %></p>
+
+<h2>Practitioners</h2>
+</center>
+
+<ul><%@spell.wizards.each do |wizard| %>
+    <div id="spell_show"><%= link_to "#{wizard.name}", wizard_path(wizard) %></div>
+<%end%></ul>

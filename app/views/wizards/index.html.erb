@@ -1,5 +1,12 @@
+<h1 class="wizard_name">Check out all these wizards!</h1>
+<center>
+<%= button_to "Create New Wizard", new_wizard_path, method: :get%>
+
 <ul>
   <% @wizards.each do |wizard| %>
-  <%= image_tag(wizard.image, size: "350x300")%>
+  <div><%= image_tag(wizard.image, size: "350x300")%><br>
+  <%= link_to "#{wizard.name}", wizard_path(wizard) %><br>
+  <%= label_tag "#{wizard.house}" %><br>
+  <%= label_tag "#{wizard.age}" %><br><br></div>
   <% end %>
-</ul>
+</ul></center>

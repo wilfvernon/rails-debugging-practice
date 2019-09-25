@@ -1,0 +1,9 @@
+<h1 class="wizard_name">Add a new Spell</h1>
+<div id="show_img"><%= image_tag("https://i.gifer.com/Mhig.gif", id: "show_pic", size: "600x285")%></div><br>
+<br>
+
+<center><%= form_for :spell, url: spells_path do |f| %>
+    <%= label_tag 'name'%><%=f.text_field :name %><br>
+    <%= label_tag 'description'%><%=f.text_area :description %><br>
+    <%= f.submit %>
+<% end %></center>

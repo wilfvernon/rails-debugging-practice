@@ -1,0 +1,9 @@
+<h1 class="wizard_name"> Editing <%= @wizard.name %> </h1>
+
+<center><%= form_for :wizard, url: wizard_path(@wizard), method: :patch do |f| %>
+    <%= label_tag 'name'%><%=f.text_field :name %><br>
+    <%= label_tag 'house'%><%=f.select :house, Wizard.houses.map {|house| house}%><br>
+    <%= label_tag 'age'%><%=f.number_field :age %><br>
+    <%= label_tag 'image url'%><%=f.text_field :image %><br>
+    <%= f.submit %>
+<% end %></center>
